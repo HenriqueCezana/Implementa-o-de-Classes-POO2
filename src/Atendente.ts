@@ -26,16 +26,16 @@ export class Atendente extends Funcionario {
   }
 
   public bonificacao(percentual?: number): number {
-    if (percentual !== undefined) {
-      return super.bonificacao(percentual);
-    }
-
-    if (this._tipo === "caixa") {
-      return super.bonificacao(7);
-    } else {
-      return super.bonificacao(10);
-    }
+  if (percentual !== undefined) {
+    return (this.salario * percentual) / 100;
   }
+
+  if (this.tipo === "caixa") {
+    return (this.salario * 7) / 100;
+  } else {
+    return (this.salario * 10) / 100;
+  }
+}
 
   public toString(): string {
     return "Atendente (" + this._tipo + ")\n" + super.toString();

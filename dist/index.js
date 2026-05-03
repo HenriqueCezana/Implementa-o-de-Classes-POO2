@@ -1,12 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const Funcionario_1 = require("./Funcionario");
 const Gerente_1 = require("./Gerente");
 const Atendente_1 = require("./Atendente");
-const Cliente_1 = require("./Cliente");
-const func1 = new Funcionario_1.Funcionario("Ana", "Rua A, 1", "99999-0001", "111.111.111-11", new Date("1990-03-15"), 4500, "001");
-const func2 = new Funcionario_1.Funcionario("Bruno", "Rua B, 2", "99999-0002", "222.222.222-22", new Date("1985-07-22"), 5000, "002");
-const func3 = new Funcionario_1.Funcionario("João", "Rua C, 7", "99999-0003", "333.333.333-33", new Date("1975-08-12"), 7500, "003");
 //console.log("Dados do Func1:\n" + func1.toString());
 /*console.log(
   "Bonificação de Func2: R$ " +
@@ -27,6 +22,6 @@ vetFuncionarios.forEach(func => {
         console.log(`Atendente - ${func.nome} - ${func.tipo} - Bonificação: R$ ${func.bonificacao().toFixed(2)}`);
     }
 });
-const cliente = new Cliente_1.Cliente('Marcos', 'Av. 9, 900', '99999-9009', '900.900.900-90', new Date('1988-01-30'), 12345 - 6, 3500);
-vetFuncionarios.push(cliente);
+/*const cliente = new Cliente('Marcos', 'Av. 9, 900', '99999-9009', '900.900.900-90', new Date('1988-01-30'), 12345-6, 3500);
+vetFuncionarios.push(cliente);*/ 
 //# sourceMappingURL=index.js.map

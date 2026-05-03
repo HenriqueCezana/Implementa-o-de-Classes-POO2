@@ -16,13 +16,13 @@ class Atendente extends Funcionario_1.Funcionario {
     }
     bonificacao(percentual) {
         if (percentual !== undefined) {
-            return super.bonificacao(percentual);
+            return (this.salario * percentual) / 100;
         }
-        if (this._tipo === "caixa") {
-            return super.bonificacao(7);
+        if (this.tipo === "caixa") {
+            return (this.salario * 7) / 100;
         }
         else {
-            return super.bonificacao(10);
+            return (this.salario * 10) / 100;
         }
     }
     toString() {

@@ -3,35 +3,6 @@ import { Gerente } from "./Gerente";
 import { Atendente } from "./Atendente";
 import { Cliente } from "./Cliente";
 
-const func1 = new Funcionario(
-  "Ana",
-  "Rua A, 1",
-  "99999-0001",
-  "111.111.111-11",
-  new Date("1990-03-15"),
-  4500,
-  "001"
-);
-
-const func2 = new Funcionario(
-  "Bruno",
-  "Rua B, 2",
-  "99999-0002",
-  "222.222.222-22",
-  new Date("1985-07-22"),
-  5000,
-  "002"
-);
-
-const func3 = new Funcionario(
-  "João",
-  "Rua C, 7",
-  "99999-0003",
-  "333.333.333-33",
-  new Date("1975-08-12"),
-  7500,
-  "003"
-);
 //console.log("Dados do Func1:\n" + func1.toString());
 
 /*console.log(

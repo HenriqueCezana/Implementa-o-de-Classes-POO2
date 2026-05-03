@@ -1,6 +1,6 @@
 import { Pessoa } from "./Pessoa";
 
-export class Funcionario extends Pessoa {
+export abstract class Funcionario extends Pessoa {
   private static _qtFuncionarios: number = 0;
   private _matricula: number;
   private _salario: number;
@@ -48,9 +48,7 @@ export class Funcionario extends Pessoa {
     this._agencia = valor;
   }
 
-  public bonificacao(percentual: number): number {
-    return (this._salario * percentual) / 100;
-  }
+  public abstract bonificacao(percentual?: number): number;
 
   public toString(): string {
     return (

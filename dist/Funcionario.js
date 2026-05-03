@@ -32,9 +32,6 @@ class Funcionario extends Pessoa_1.Pessoa {
     set agencia(valor) {
         this._agencia = valor;
     }
-    bonificacao(percentual) {
-        return (this._salario * percentual) / 100;
-    }
     toString() {
         return (super.toString() +
             "\nMatrícula: " + this._matricula +

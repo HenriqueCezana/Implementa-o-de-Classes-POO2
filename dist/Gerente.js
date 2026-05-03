@@ -16,16 +16,16 @@ class Gerente extends Funcionario_1.Funcionario {
     }
     bonificacao(percentual) {
         if (percentual !== undefined) {
-            return super.bonificacao(percentual);
+            return (this.salario * percentual) / 100;
         }
-        if (this._nivel === "conta") {
-            return super.bonificacao(15);
+        if (this.nivel === "conta") {
+            return (this.salario * 15) / 100;
         }
-        else if (this._nivel === "agência") {
-            return super.bonificacao(20);
+        else if (this.nivel === "agência") {
+            return (this.salario * 20) / 100;
         }
         else {
-            return super.bonificacao(25);
+            return (this.salario * 25) / 100;
         }
     }
     toString() {
