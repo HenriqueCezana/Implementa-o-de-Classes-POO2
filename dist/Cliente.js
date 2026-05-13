@@ -3,30 +3,28 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Cliente = void 0;
 const Pessoa_1 = require("./Pessoa");
 class Cliente extends Pessoa_1.Pessoa {
-    _idConta;
-    _limiteCredito;
-    constructor(nome, endereco, telefone, cpf, dataNascimento, numeroConta, limiteCredito) {
-        super(nome, endereco, telefone, cpf, dataNascimento);
-        this._idConta = numeroConta;
-        this._limiteCredito = limiteCredito;
+    _agencia;
+    _senha;
+    constructor(nome, endereco, telefone, cpf, dataNascimento, agencia, senha = "1234") {
+        super(nome.toUpperCase(), endereco, telefone, cpf, dataNascimento);
+        this._agencia = agencia != undefined ? agencia : "001";
+        this._senha = senha;
     }
-    get idConta() {
-        return this._idConta;
+    get agencia() {
+        return this._agencia;
     }
-    set idConta(valor) {
-        this._idConta = valor;
+    set agencia(novaAgencia) {
+        if (novaAgencia != "") {
+            this._agencia = novaAgencia;
+        }
     }
-    get limiteCredito() {
-        return this._limiteCredito;
-    }
-    set limiteCredito(valor) {
-        this._limiteCredito = valor;
+    autentica(senha) {
+        return this._senha == senha;
     }
     toString() {
-        return ("Cliente:\n" +
+        return "Cliente:\n" +
             super.toString() +
-            "\nConta: " + this._idConta +
-            "\nLimite de Crédito: R$ " + this._limiteCredito.toFixed(2));
+            "\nAgência : " + this._agencia;
     }
 }
 exports.Cliente = Cliente;

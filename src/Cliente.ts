@@ -1,45 +1,35 @@
-import { Pessoa } from "./Pessoa";
+import {Pessoa} from "./Pessoa";
+import {IAutenticavel} from "./IAutenticavel";
 
-export class Cliente extends Pessoa {
-  private _idConta: number;
-  private _limiteCredito: number;
+export class Cliente extends Pessoa implements IAutenticavel {
+    private _agencia: string;
+    private _senha: string;
 
-  constructor(
-    nome: string,
-    endereco: string,
-    telefone: string,
-    cpf: string,
-    dataNascimento: Date,
-    numeroConta: number,
-    limiteCredito: number
-  ) {
-    super(nome, endereco, telefone, cpf, dataNascimento);
-    this._idConta = numeroConta;
-    this._limiteCredito = limiteCredito;
-  }
+    constructor(nome: string, endereco: string, telefone: string, cpf: string, dataNascimento: Date, agencia?: string, senha: string = "1234") {
+        super(
+            nome.toUpperCase(), endereco, telefone, cpf, dataNascimento
+        );
+        this._agencia = agencia != undefined ? agencia : "001";
+        this._senha = senha;
+    }
 
-  public get idConta(): number {
-    return this._idConta;
-  }
+    get agencia() : string {
+        return this._agencia;
+    } 
 
-  public set idConta(valor: number) {
-    this._idConta = valor;
-  }
+    set agencia(novaAgencia: string)  {
+        if (novaAgencia != "") {
+            this._agencia = novaAgencia;
+        }        
+    }
 
-  public get limiteCredito(): number {
-    return this._limiteCredito;
-  }
-
-  public set limiteCredito(valor: number) {
-    this._limiteCredito = valor;
-  }
-
-  public toString(): string {
-    return (
-      "Cliente:\n" +
-      super.toString() +
-      "\nConta: " + this._idConta +
-      "\nLimite de Crédito: R$ " + this._limiteCredito.toFixed(2)
-    );
-  }
+    autentica(senha: string): boolean {
+        return this._senha == senha;
+    }
+    
+    toString(): string{
+        return "Cliente:\n"+
+            super.toString() +
+            "\nAgência : " + this._agencia;
+    }
 }
